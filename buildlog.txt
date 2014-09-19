@@ -1,0 +1,540 @@
+# Bake Begins!
+### (1 of 6) Copy sources
+$ cp -a /home/travis/build/fontdirectory/antonio/METADATA.json /home/travis/build/fontdirectory/antonio/builds/build
+$ cp -a /home/travis/build/fontdirectory/antonio/DESCRIPTION.en_us.html /home/travis/build/fontdirectory/antonio/builds/build
+$ cp -a Antonio-Bold.ttf.ttx Antonio-Light.ttf.ttx Antonio-Regular.ttf.ttx Antonio-Bold.ttf.O_S_2f_2.ttx Antonio-Bold.ttf.G_S_U_B_.ttx Antonio-Bold.ttf._f_p_g_m.ttx Antonio-Bold.ttf.F_F_T_M_.ttx Antonio-Bold.ttf._g_a_s_p.ttx Antonio-Bold.ttf.GlyphOrder.ttx Antonio-Bold.ttf._p_r_e_p.ttx Antonio-Bold.ttf._h_e_a_d.ttx Antonio-Bold.ttf._g_l_y_f.ttx Antonio-Bold.ttf._p_o_s_t.ttx Antonio-Bold.ttf._n_a_m_e.ttx Antonio-Bold.ttf._c_v_t.ttx Antonio-Bold.ttf._c_m_a_p.ttx Antonio-Bold.ttf._h_m_t_x.ttx Antonio-Bold.ttf.G_D_E_F_.ttx Antonio-Bold.ttf._h_h_e_a.ttx Antonio-Bold.ttf._l_o_c_a.ttx Antonio-Bold.ttf.G_P_O_S_.ttx Antonio-Bold.ttf._m_a_x_p.ttx Antonio-Light.ttf._c_v_t.ttx Antonio-Light.ttf._h_m_t_x.ttx Antonio-Light.ttf._n_a_m_e.ttx Antonio-Light.ttf._p_r_e_p.ttx Antonio-Light.ttf._m_a_x_p.ttx Antonio-Light.ttf._l_o_c_a.ttx Antonio-Light.ttf.F_F_T_M_.ttx Antonio-Light.ttf._g_a_s_p.ttx Antonio-Light.ttf._p_o_s_t.ttx Antonio-Light.ttf._c_m_a_p.ttx Antonio-Light.ttf.G_S_U_B_.ttx Antonio-Light.ttf._h_h_e_a.ttx Antonio-Light.ttf.G_D_E_F_.ttx Antonio-Light.ttf.GlyphOrder.ttx Antonio-Light.ttf.O_S_2f_2.ttx Antonio-Light.ttf._h_e_a_d.ttx Antonio-Light.ttf._f_p_g_m.ttx Antonio-Light.ttf.G_P_O_S_.ttx Antonio-Light.ttf._g_l_y_f.ttx Antonio-Regular.ttf._h_e_a_d.ttx Antonio-Regular.ttf._n_a_m_e.ttx Antonio-Regular.ttf.O_S_2f_2.ttx Antonio-Regular.ttf._c_m_a_p.ttx Antonio-Regular.ttf._p_r_e_p.ttx Antonio-Regular.ttf.G_P_O_S_.ttx Antonio-Regular.ttf._h_h_e_a.ttx Antonio-Regular.ttf._g_l_y_f.ttx Antonio-Regular.ttf._c_v_t.ttx Antonio-Regular.ttf.F_F_T_M_.ttx Antonio-Regular.ttf.G_S_U_B_.ttx Antonio-Regular.ttf._h_m_t_x.ttx Antonio-Regular.ttf._f_p_g_m.ttx Antonio-Regular.ttf.GlyphOrder.ttx Antonio-Regular.ttf.G_D_E_F_.ttx Antonio-Regular.ttf._l_o_c_a.ttx Antonio-Regular.ttf._m_a_x_p.ttx Antonio-Regular.ttf._g_a_s_p.ttx Antonio-Regular.ttf._p_o_s_t.ttx /home/travis/build/fontdirectory/antonio/builds/build/sources
+### (2 of 6) pyfontaine
+### (3 of 6) Run upstream tests
+$ bakery-lint.py upstream-repo sources
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_component(): OK
+$ fontaine --collections subsets --text /home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Bold.ttf.ttx /home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Light.ttf.ttx /home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Regular.ttf.ttx > fontaine.txt
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_mark_to_mark(): OK
+bakery_lint.tests.upstream.test_diacritic.TestDiacritic.test_diacritic_made_as_own_glyphs(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_bakery_yaml_exists(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_copyright_notices_same_across_family(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_description_html_exists(): OK
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_fontlog_txt_exists(): FAIL
+bakery_lint.tests.upstream.test_check_upstream_sources.ProjectUpstreamTestCase.test_metadata_json_exists(): OK
+WARNING: Please install [PyICU](https://pypi.python.org/pypi/PyICU) toenable [feature], perhaps with: pip install pyicu
+end of pyfontaine process
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_prepolation_glyph_contours(): OK
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_prepolation_glyph_points(): OK
+bakery_lint.tests.upstream.test_prepolation.FontTestPrepolation.test_font_test_prepolation_glyph_names(): OK
+$ bakery-lint.py upstream-ttx Antonio-Bold.ttf.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): FAIL
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Bold.ttf.ttx /home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Bold.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): OK
+bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations.TTX_FontFamilyNamingTest.test_ttx_family_naming_recommendation(): OK
+bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars.TestGlyphNameDoesNotContainsDisallowedChars.test_glyphname_does_not_contain_disallowed_chars(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_epar_in_keys(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_os2_in_keys(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_ttx_doesnt_contain_duplicate_glyphs(): OK
+$ bakery-lint.py upstream-ttx Antonio-Light.ttf.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): FAIL
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Light.ttf.ttx /home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Light.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): OK
+bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations.TTX_FontFamilyNamingTest.test_ttx_family_naming_recommendation(): OK
+bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars.TestGlyphNameDoesNotContainsDisallowedChars.test_glyphname_does_not_contain_disallowed_chars(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_epar_in_keys(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_os2_in_keys(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_ttx_doesnt_contain_duplicate_glyphs(): OK
+$ bakery-lint.py upstream-ttx Antonio-Regular.ttf.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): FAIL
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Regular.ttf.ttx /home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Regular.ttx
+bakery_lint.tests.upstream.test_font_filename_eq_familystyle.TestTTFSourceFontFileNameEqualsFamilyStyle.test_source_ttf_font_filename_equals_familystyle(): OK
+bakery_lint.tests.upstream.test_check_ttx_fontfamily_recommendations.TTX_FontFamilyNamingTest.test_ttx_family_naming_recommendation(): OK
+bakery_lint.tests.upstream.test_glyphname_does_not_contain_disallowed_chars.TestGlyphNameDoesNotContainsDisallowedChars.test_glyphname_does_not_contain_disallowed_chars(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_epar_in_keys(): FAIL
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_os2_in_keys(): OK
+bakery_lint.tests.upstream.test_check_ttx_requirements.SourceTTXTest.test_ttx_doesnt_contain_duplicate_glyphs(): OK
+### (4 of 6) Convert sources to TTF
+$ ttx -d /home/travis/build/fontdirectory/antonio/builds/build /home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Regular.ttx /home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Light.ttx /home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Bold.ttx
+Compiling "/home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Regular.ttx" to "/home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf"...
+Parsing 'GlyphOrder' table...
+Parsing 'head' table...
+Parsing 'hhea' table...
+Parsing 'maxp' table...
+Parsing 'OS/2' table...
+Parsing 'hmtx' table...
+Parsing 'cmap' table...
+Parsing 'fpgm' table...
+Parsing 'prep' table...
+Parsing 'cvt ' table...
+Parsing 'loca' table...
+Parsing 'glyf' table...
+Parsing 'name' table...
+Parsing 'post' table...
+Parsing 'gasp' table...
+Parsing 'FFTM' table...
+Parsing 'GDEF' table...
+Parsing 'GPOS' table...
+Parsing 'GSUB' table...
+Compiling "/home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Light.ttx" to "/home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf"...
+Parsing 'GlyphOrder' table...
+Parsing 'head' table...
+Parsing 'hhea' table...
+Parsing 'maxp' table...
+Parsing 'OS/2' table...
+Parsing 'hmtx' table...
+Parsing 'cmap' table...
+Parsing 'fpgm' table...
+Parsing 'prep' table...
+Parsing 'cvt ' table...
+Parsing 'loca' table...
+Parsing 'glyf' table...
+Parsing 'name' table...
+Parsing 'post' table...
+Parsing 'gasp' table...
+Parsing 'FFTM' table...
+Parsing 'GDEF' table...
+Parsing 'GPOS' table...
+Parsing 'GSUB' table...
+Compiling "/home/travis/build/fontdirectory/antonio/builds/build/sources/Antonio-Bold.ttx" to "/home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf"...
+Parsing 'GlyphOrder' table...
+Parsing 'head' table...
+Parsing 'hhea' table...
+Parsing 'maxp' table...
+Parsing 'OS/2' table...
+Parsing 'hmtx' table...
+Parsing 'cmap' table...
+Parsing 'fpgm' table...
+Parsing 'prep' table...
+Parsing 'cvt ' table...
+Parsing 'loca' table...
+Parsing 'glyf' table...
+Parsing 'name' table...
+Parsing 'post' table...
+Parsing 'gasp' table...
+Parsing 'FFTM' table...
+Parsing 'GDEF' table...
+Parsing 'GPOS' table...
+Parsing 'GSUB' table...
+### Test Antonio-Regular.ttf
+$ bakery-lint.py result Antonio-Regular.ttf
+### Test Antonio-Light.ttf
+$ bakery-lint.py result Antonio-Light.ttf
+### Test Antonio-Bold.ttf
+$ bakery-lint.py result Antonio-Bold.ttf
+### (5 of 6) Generate METADATA.json (genmetadata.py)
+$ genmetadata.py /home/travis/build/fontdirectory/antonio/builds/build
+{} exists
+Designer's name from font is: Vernon Adams
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): OK
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+$ bakery-encode-glyphs-fix.py --autofix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): OK
+bakery_lint.tests.downstream.test_check_license_included.CheckLicenseIncluded.test_license_included_in_font_names(): OK
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+$ bakery-encode-glyphs-fix.py --autofix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+bakery_lint.tests.downstream.test_check_names_same_across_platforms.CheckNamesSameAcrossPlatforms.test_check_names_same_across_platforms(): OK
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+$ bakery-encode-glyphs-fix.py --autofix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+Original size: 47400\nGzip size: 26382
+Family Name: Antonio
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): OK
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+PS Name: Antonio-Bold
+Full Name: Antonio Bold
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): FAIL
+$ bakery-opentype-fix.py /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): OK
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+Style: normal
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): OK
+Weight: 700
+Filename: Antonio-Bold.ttf
+Copyright: Copyright (c) 2011-12, vernon adams (vern@newtypography.co.uk), with Reserved Font Names 'Antonio'
+Family Name: Antonio
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+PS Name: Antonio-Regular
+Full Name: Antonio Regular
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): OK
+bakery_lint.tests.downstream.test_check_unencoded_glyph.TestFontUnencodedGlyph.test_font_unencoded_glyphs(): FAIL
+Style: normal
+Weight: 400
+Filename: Antonio-Regular.ttf
+Copyright: Copyright (c) 2011-12, vernon adams (vern@newtypography.co.uk), with Reserved Font Names 'Antonio'
+Family Name: Antonio
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): FAIL
+bakery_lint.tests.downstream.test_check_full_font_name_begins_with_family_name.CheckFullFontNameBeginsWithFamilyName.test_check_full_font_name_begins_with_family_name(): OK
+$ bakery-opentype-fix.py /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf
+PS Name: Antonio-Light
+Full Name: Antonio Light
+bakery_lint.tests.downstream.test_check_panose_identification.CheckPanoseIdentification.test_check_panose_identification(): OK
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+Style: normal
+Weight: 300
+Filename: Antonio-Light.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): FAIL
+Copyright: Copyright (c) 2011-12, vernon adams (vern@newtypography.co.uk), with Reserved Font Names 'Antonio'
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckStyleNameRecommendation.test_check_stylename_is_under_recommendations(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFamilyNameRecommendation.test_check_opentype_familyname(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): FAIL
+$ bakery-opentype-fix.py /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): OK
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): FAIL
+$ bakery-opentype-fix.py /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+### (6 of 6) Run tests for METADATA.json
+$ bakery-lint.py metadata METADATA.json
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): OK
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+$ bakery-gasp.py --set=15 /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTStyleNameRecommendation.test_check_opentype_stylename(): FAIL
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): OK
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ bakery-gasp.py --set=15 /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_latin(): FAIL
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_latin_ext(): FAIL
+bakery_lint.tests.metadata_test.MetadataSubsetsListTest.test_charset_menu(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_description_is_more_than_500b(): FAIL
+bakery_lint.tests.downstream.test_check_name_table_recommendation.CheckOTFullNameRecommendation.test_check_opentype_fullname(): OK
+bakery_lint.tests.downstream.test_check_os2_width_class.CheckOS2WidthClass.test_check_os2_width_class(): OK
+bakery_lint.tests.downstream.test_gasp_table_value.CheckGaspTableType.test_check_gasp_table_type(): OK
+$ bakery-gasp.py --set=15 /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): FAIL
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): FAIL
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_description_is_valid_html(): OK
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+bakery_lint.tests.downstream.test_check_upm_heights_less_120.TestCheckUPMHeightsLess120.test_check_upm_heigths_less_120(): FAIL
+bakery_lint.tests.downstream.test_check_fontname_matches_macstyle.CheckFontNameEqualToMacStyleFlags.test_fontname_is_equal_to_macstyle(): FAIL
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalLinegapMetrics.test_metrics_linegaps_are_zero(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_daltonmaag_catalogue(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontbureau_catalogue(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontscom_catalogue(): FAIL
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): FAIL
+$ bakery-vmet-fix.py --autofix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): FAIL
+$ bakery-vmet-fix.py --autofix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+$ bakery-vmet-fix.py --autofix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontshop_catalogue(): FAIL
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+$ bakery-vmet-fix.py /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+$ bakery-vmet-fix.py /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+Process Process-7:
+Traceback (most recent call last):
+  File "/opt/python/2.7.8/lib/python2.7/multiprocessing/process.py", line 258, in _bootstrap
+    self.run()
+  File "/opt/python/2.7.8/lib/python2.7/multiprocessing/process.py", line 114, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_cli/pipe/build.py", line 114, in run_processes
+    fontlint.run(filename, pipedata)
+  File "/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_cli/pipe/fontlint.py", line 60, in run
+    log=self.bakery.logger)
+  File "/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_lint/__init__.py", line 27, in run_set
+    return run_suite(tests_suite)
+  File "/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_lint/base.py", line 246, in run_suite
+    runner.run(suite)
+  File "/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_lint/base.py", line 171, in run
+    test(result)
+  File "/opt/python/2.7.8/lib/python2.7/unittest/suite.py", line 70, in __call__
+    return self.run(*args, **kwds)
+  File "/opt/python/2.7.8/lib/python2.7/unittest/suite.py", line 108, in run
+    test(result)
+  File "/opt/python/2.7.8/lib/python2.7/unittest/case.py", line 393, in __call__
+    return self.run(*args, **kwds)
+  File "/opt/python/2.7.8/lib/python2.7/unittest/case.py", line 333, in run
+    result.addFailure(self, sys.exc_info())
+  File "/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_lint/base.py", line 136, in addFailure
+    self.callmethod(test_method.autofix_method, test)
+  File "/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_lint/base.py", line 91, in callmethod
+    getattr(mod, methodname.split('.')[-1])(test)
+  File "/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_cli/pipe/autofix.py", line 132, in fix_metrics
+    testcase.operator.debug(metricview(paths))
+  File "/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_cli/scripts/vmet.py", line 41, in metricview
+    metrics = Font(f)
+  File "/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_cli/ttfont.py", line 43, in __init__
+    self.ttfont = ttLib.TTFont(fontpath)
+  File "/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/FontTools/fontTools/ttLib/__init__.py", line 166, in __init__
+    self.reader = sfnt.SFNTReader(file, checkChecksums, fontNumber=fontNumber)
+  File "/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/FontTools/fontTools/ttLib/sfnt.py", line 49, in __init__
+    sstruct.unpack(sfntDirectoryFormat, self.file.read(sfntDirectorySize), self)
+  File "/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/FontTools/fontTools/misc/sstruct.py", line 87, in unpack
+    elements = struct.unpack(formatstring, data)
+error: unpack requires a string argument of length 12
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+Error: 
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+$ bakery-vmet-fix.py /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Regular.ttf /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+Parameter              Antonio-Bold.ttf    Antonio-Regular.ttf    Antonio-Light.ttf    
+ymax                   2425                2382                   2342                 
+hhea.ascent            2425                2425                   2425                 
+OS/2.sTypoAscender     2425                2425                   2425                 
+OS/2.usWinAscent       2425                2425                   2425                 
+ymin                   -732                -670                   -612                 
+hhea.descent           -732                -732                   -732                 
+OS/2.sTypoDescender    -732                -732                   -732                 
+OS/2.usWinDescent      732                 732                    732                  
+hhea.lineGap           0                   0                      0                    
+OS/2.sTypoLineGap      0                   0                      0                    
+hhea total             3157                3157                   3157                 
+typo total             3157                3157                   3157                 
+win total              3157                3157                   3157                 
+UPM:Heights            2048:3157           2048:3052              2048:2954            
+UPM:Heights %          154 %               149 %                  144 %                
+
+
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_fontsmith_catalogue(): OK
+Parameter              Antonio-Bold.ttf    Antonio-Regular.ttf    Antonio-Light.ttf    
+ymax                   2425                2382                   2342                 
+hhea.ascent            2425                2425                   2425                 
+OS/2.sTypoAscender     2425                2425                   2425                 
+OS/2.usWinAscent       2425                2425                   2425                 
+ymin                   -732                -670                   -612                 
+hhea.descent           -732                -732                   -732                 
+OS/2.sTypoDescender    -732                -732                   -732                 
+OS/2.usWinDescent      732                 732                    732                  
+hhea.lineGap           0                   0                      0                    
+OS/2.sTypoLineGap      0                   0                      0                    
+hhea total             3157                3157                   3157                 
+typo total             3157                3157                   3157                 
+win total              3157                3157                   3157                 
+UPM:Heights            2048:3157           2048:3052              2048:2954            
+UPM:Heights %          154 %               149 %                  144 %                
+
+
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_houseind_catalogue(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_myfonts_catalogue(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalAscentMetrics.test_metrics_ascents_equal_bbox(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_does_not_familyName_exist_in_veer_catalogue(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_family_is_listed_in_gwf(): FAIL
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_atleast_latin_menu_subsets_exist(): OK
+/home/travis/virtualenv/python2.7.8/lib/python2.7/site-packages/bakery_lint/tests/metadata_test.py:141: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
+  self.assertTrue(designer in designers,
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_designer_exists_in_profiles_csv(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_items_dicts(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_key_list(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_fonts_no_dupes(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_has_unique_style_weight_pairs(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_keys(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_license(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_no_unknown_top_keys(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_subsets_key_list(): OK
+bakery_lint.tests.metadata_test.MetadataTest.test_metadata_top_keys_types(): FAIL
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckCanonicalWeights.test_check_canonical_weights(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckPostScriptNameMatchesWeight.test_postscriptname_contains_correct_weight(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckFontWeightSameAsInMetadata.test_font_weight_same_as_in_metadata(): OK
+bakery_lint.tests.downstream.test_check_canonical_weights.CheckFullNameEqualCanonicalName.test_metadata_contains_current_font(): OK
+bakery_lint.tests.downstream.test_check_canonical_filenames.CheckCanonicalFilenames.test_check_canonical_filenames(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_font_name_matches_family(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_family(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_family_values_are_all_the_same(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_filename_matches_postScriptName(): FAIL
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_font_have_regular(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fonts_fields_have_fontname(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fullname_is_equal_to_internal_font_fullname(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_fullname_matches_postScriptName(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_postScriptName_matches_ttf_fontname(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_regular_is_400(): OK
+bakery_lint.tests.downstream.test_metadata_agreements.CheckMetadataAgreements.test_metadata_regular_is_normal(): OK
+bakery_lint.tests.downstream.test_check_subsets_exists.CheckSubsetsExist.test_check_subsets_exists(): FAIL
+bakery_lint.tests.downstream.test_check_monospace_agreements.CheckMonospaceAgreement.test_check_monospace_agreement(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): OK
+$ bakery-fstype-fix.py --autofix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+bakery_lint.tests.downstream.test_check_canonical_styles.CheckCanonicalStyles.test_check_canonical_styles(): OK
+bakery_lint.tests.downstream.test_check_familyname_matches_fontnames.CheckFamilyNameMatchesFontNames.test_check_familyname_matches_fontnames(): OK
+bakery_lint.tests.downstream.test_check_font_name_not_in_camelcase.CheckFontNameNotInCamelCase.test_fontname_not_in_camel_case(): OK
+bakery_lint.tests.downstream.test_check_metadata_matches_nametable.CheckMetadataMatchesNameTable.test_check_metadata_matches_nametable(): OK
+bakery_lint.tests.downstream.test_check_files_menu_agreements.CheckFontsMenuAgreements.test_menu_file_agreement(): FAIL
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_em_is_1000(): FAIL
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_file_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_font_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_latin_file_exists(): FAIL
+bakery_lint.tests.downstream.test_check_glyf_table_length.CheckGlyfTableLength.test_check_glyf_table_length(): FAIL
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_encodings_of_glyphs_across_family(): OK
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): OK
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_names_of_glyphs_across_family(): FAIL
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_euro(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_nbsp(): OK
+bakery_lint.tests.downstream.test_check_glyph_consistency.CheckGlyphConsistencyInFamily.test_the_same_number_of_glyphs_across_family(): FAIL
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_copyrighttxt_exists(): FAIL
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_description_exists(): OK
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_fontlogtxt_exists(): FAIL
+bakery_lint.tests.downstream.test_check_text_files_exist.CheckTextFilesExist.test_licensetxt_exists(): FAIL
+bakery_lint.tests.downstream.test_check_metadata_style_matches_names.CheckItalicStyleMatchesMacStyle.test_check_italic_style_matches_names(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_space(): OK
+bakery_lint.tests.downstream.test_check_italic_angle_agreement.CheckItalicAngleAgreement.test_check_italic_angle_agreement(): OK
+bakery_lint.tests.downstream.test_check_metadata_style_matches_names.CheckNormalStyleMatchesMacStyle.test_check_normal_style_matches_names(): OK
+bakery_lint.tests.downstream.test_check_hmtx_hhea_max_advance_width_agreement.CheckHmtxHheaMaxAdvanceWidthAgreement.test_check_hmtx_hhea_max_advance_width_agreement(): OK
+bakery_lint.tests.downstream.test_check_magic_prep_code.CheckMagicPREPByteCode.test_prep_magic_code(): FAIL
+bakery_lint.tests.downstream.test_check_metadata_fields.CheckMetadataFields.test_check_metadata_fields(): OK
+Warning: Mac and Windows entries in the 'name' table differ for the
+ Preferred Styles string in the language English (US)
+ Mac String: Light
+Windows String: Regular
+bakery_lint.tests.downstream.test_check_menu_contains_proper_glyphs.CheckMenuSubsetContainsProperGlyphs.test_check_menu_contains_proper_glyphs(): ERROR
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_contains_correct_rfn(): OK
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_is_consistent_across_family(): OK
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_copyright_matches_pattern(): OK
+bakery_lint.tests.downstream.test_metadata_font_copyright.CheckMetadataContainsReservedFontName.test_metadata_copyright_size(): OK
+bakery_lint.tests.downstream.test_check_vertical_metrics.CheckVerticalDescentMetrics.test_metrics_descents_equal_bbox(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFsTypeIsNotSet.test_is_fstype_not_set(): OK
+$ bakery-fstype-fix.py --autofix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_em_is_1000(): FAIL
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_file_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_font_is_font(): OK
+bakery_lint.tests.downstream.test_check_font_agreements.CheckFontAgreements.test_latin_file_exists(): FAIL
+bakery_lint.tests.downstream.test_check_glyf_table_length.CheckGlyfTableLength.test_check_glyf_table_length(): FAIL
+bakery_lint.tests.downstream.test_check_nbsp_width_matches_sp_width.CheckNbspWidthMatchesSpWidth.test_check_nbsp_width_matches_sp_width(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_euro(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_nbsp(): OK
+bakery_lint.tests.downstream.test_check_glyph_existence.CheckGlyphExistence.test_space(): OK
+bakery_lint.tests.downstream.test_check_italic_angle_agreement.CheckItalicAngleAgreement.test_check_italic_angle_agreement(): OK
+bakery_lint.tests.downstream.test_check_hmtx_hhea_max_advance_width_agreement.CheckHmtxHheaMaxAdvanceWidthAgreement.test_check_hmtx_hhea_max_advance_width_agreement(): OK
+bakery_lint.tests.downstream.test_check_magic_prep_code.CheckMagicPREPByteCode.test_prep_magic_code(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_unicode_codepoints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_flipped_reference_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_anchors(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_extrema_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_overlapped_hints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_integer_aligned(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_not_too_far_apart(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_hints_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_referenced_glyphs_are_present(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_glyph_names(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_length_instructions(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_glyph_intersect(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_open_contours(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_wrong_direction_in_glyphs(): OK
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): FAIL
+$ bakery-dsig.py /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_paths_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_composite_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_allowed_numbers_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_glyphs(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasNotKernTable.test_no_kern_table_exists(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_duplicate_unicode_codepoints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_flipped_reference_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_anchors(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_missing_extrema_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_overlapped_hints(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_integer_aligned(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_points_are_not_too_far_apart(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_hints_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_postscript_hasnt_limit_points_in_glyphs(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_referenced_glyphs_are_present(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_glyph_names(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_valid_length_instructions(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_glyph_intersect(): FAIL
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_validation_open_contours(): OK
+bakery_lint.tests.downstream.test_fontforge_validation_state.FontForgeValidateStateTest.test_wrong_direction_in_glyphs(): OK
+bakery_lint.tests.downstream.test_names_are_ascii_only.CheckNamesAreASCIIOnly.test_check_names_are_ascii_only(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): FAIL
+$ bakery-dsig.py /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf.fix /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasDsigTable.test_check_font_has_dsig_table(): OK
+bakery_lint.tests.downstream.test_check_font_tables.CheckFontHasNotKernTable.test_no_kern_table_exists(): OK
+bakery_lint.tests.downstream.test_gpos_table_has_kerning_info.CheckGposTableHasKerningInfo.test_gpos_table_has_kerning_info(): OK
+bakery_lint.tests.downstream.test_check_no_problematic_formats.CheckNoProblematicFormats.test_check_no_problematic_formats(): OK
+bakery_lint.tests.downstream.test_check_unused_glyph_data.CheckUnusedGlyphData.test_check_unused_glyph_data(): ERROR
+bakery_lint.tests.downstream.test_gpos_table_has_kerning_info.CheckGposTableHasKerningInfo.test_gpos_table_has_kerning_info(): OK
+bakery_lint.tests.downstream.test_check_no_problematic_formats.CheckNoProblematicFormats.test_check_no_problematic_formats(): OK
+bakery_lint.tests.downstream.test_check_unused_glyph_data.CheckUnusedGlyphData.test_check_unused_glyph_data(): ERROR
+### Optimize TTF Antonio-Light.ttf
+### Optimize TTF Antonio-Bold.ttf
+$ ls -l 'Antonio-Light.ttf'* # look at the size savings of that subset process
+Antonio-Light.ttf.opt: 43072 bytes
+Antonio-Light.ttf: 46828 bytes
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf.opt /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+### Autohint TTFs (ttfautohint) Antonio-Light.ttf
+$ ls -l 'Antonio-Bold.ttf'* # look at the size savings of that subset process
+Antonio-Bold.ttf.opt: 44928 bytes
+Antonio-Bold.ttf: 48720 bytes
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf.opt /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+### Autohint TTFs (ttfautohint) Antonio-Bold.ttf
+$ ls -l /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.*ttf # look at the size savings of that subset process
+/home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf: 43072 bytes
+/home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.autohint.ttf: 43084 bytes
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.autohint.ttf /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+### Subset TTFs (pyftsubset) Antonio-Light.ttf
+$ ls -l /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.*ttf # look at the size savings of that subset process
+/home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf: 44928 bytes
+/home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.autohint.ttf: 45128 bytes
+$ mv /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.autohint.ttf /home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+### Subset TTFs (pyftsubset) Antonio-Bold.ttf
+Generate Antonio-Light.latin
+Generate Antonio-Light.menu
+strippedname:/home/travis/build/fontdirectory/antonio/builds/build/Antonio-Light.ttf
+Generate Antonio-Bold.latin
+Generate Antonio-Bold.menu
+strippedname:/home/travis/build/fontdirectory/antonio/builds/build/Antonio-Bold.ttf
+{
+  "name": "Antonio", 
+  "designer": "Vernon Adams", 
+  "license": "OFL", 
+  "visibility": "Sandbox", 
+  "category": "Sans Serif", 
+  "size": 26453, 
+  "fonts": [
+    {
+      "name": "Antonio", 
+      "postScriptName": "Antonio-Bold", 
+      "fullName": "Antonio Bold", 
+      "style": "normal", 
+      "weight": 700, 
+      "filename": "Antonio-Bold.ttf", 
+      "copyright": "Copyright (c) 2011-12, vernon adams (vern@newtypography.co.uk), with Reserved Font Names 'Antonio'"
+    }, 
+    {
+      "name": "Antonio", 
+      "postScriptName": "Antonio-Regular", 
+      "fullName": "Antonio Regular", 
+      "style": "normal", 
+      "weight": 400, 
+      "filename": "Antonio-Regular.ttf", 
+      "copyright": "Copyright (c) 2011-12, vernon adams (vern@newtypography.co.uk), with Reserved Font Names 'Antonio'"
+    }, 
+    {
+      "name": "Antonio", 
+      "postScriptName": "Antonio-Light", 
+      "fullName": "Antonio Light", 
+      "style": "normal", 
+      "weight": 300, 
+      "filename": "Antonio-Light.ttf", 
+      "copyright": "Copyright (c) 2011-12, vernon adams (vern@newtypography.co.uk), with Reserved Font Names 'Antonio'"
+    }
+  ], 
+  "subsets": [
+    "latin"
+  ], 
+  "dateAdded": "2013-03-06"
+}

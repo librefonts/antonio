@@ -1,0 +1,41 @@
+{
+  "name": "Antonio",
+  "designer": "Vernon Adams",
+  "license": "OFL",
+  "visibility": "Sandbox",
+  "category": "Sans Serif",
+  "size": 26453,
+  "fonts": [
+    {
+      "name": "Antonio",
+      "style": "normal",
+      "weight": 700,
+      "filename": "Antonio-Bold.ttf",
+      "postScriptName": "Antonio-Bold",
+      "fullName": "Antonio Bold",
+      "copyright": "Copyright (c) 2011-12, vernon adams (vern@newtypography.co.uk), with Reserved Font Names 'Antonio'"
+    },
+    {
+      "name": "Antonio",
+      "style": "normal",
+      "weight": 400,
+      "filename": "Antonio-Regular.ttf",
+      "postScriptName": "Antonio-Regular",
+      "fullName": "Antonio Regular",
+      "copyright": "Copyright (c) 2011-12, vernon adams (vern@newtypography.co.uk), with Reserved Font Names 'Antonio'"
+    },
+    {
+      "name": "Antonio",
+      "style": "normal",
+      "weight": 300,
+      "filename": "Antonio-Light.ttf",
+      "postScriptName": "Antonio-Light",
+      "fullName": "Antonio Light",
+      "copyright": "Copyright (c) 2011-12, vernon adams (vern@newtypography.co.uk), with Reserved Font Names 'Antonio'"
+    }
+  ],
+  "subsets": [
+    "latin"
+  ],
+  "dateAdded": "2013-03-06"
+}
